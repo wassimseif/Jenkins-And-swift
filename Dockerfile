@@ -57,7 +57,7 @@ RUN git clone -b $LIBDISPATCH_BRANCH https://github.com/apple/swift-corelibs-lib
   && make \
   && make install
 
-//Done with installing swift. Should install jenkins now
+#Done with installing swift. Should install jenkins now
 RUN wget -q -O - http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key | apt-key add -
 RUN echo deb http://pkg.jenkins-ci.org/debian binary/ > /etc/apt/sources.list.d/jenkins.list
 RUN apt-get update
