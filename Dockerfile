@@ -6,6 +6,7 @@ ENV UBUNTU_VERSION_NO_DOTS ubuntu1404
 ENV HOME /root
 ENV WORK_DIR /root
 ENV LIBDISPATCH_BRANCH experimental/foundation
+ENV TERM dumb
 
 # Set WORKDIR
 WORKDIR ${WORK_DIR}
@@ -35,11 +36,6 @@ RUN apt-get update && apt-get install -y \
   openssl \
   libssl-dev
 
-
-ADD .vim /root/.vim
-ADD .vimrc /root/.vimrc
-
-RUN echo "set -o vi" >> /root/.bashrc
 
 # Install Swift compiler
 RUN wget https://swift.org/builds/development/$UBUNTU_VERSION_NO_DOTS/$SWIFT_SNAPSHOT/$SWIFT_SNAPSHOT-$UBUNTU_VERSION.tar.gz \
